@@ -27,4 +27,4 @@ Pseudo code
 		ii. Else:
 			1. Output maxvaluue
 4. else:
-	a. Output "Array size is 0, not possible."
+	a. Output "Arra size is 0, not possible."
