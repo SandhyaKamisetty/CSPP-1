@@ -7,3 +7,7 @@ while i <= 10:
     print(i)
     i = i+2
 print('Goodbye!')
+
+for A in range(2, 12, 2):
+    print(A)
+print('Goodbye!')
