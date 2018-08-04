@@ -21,7 +21,7 @@ def main():
     inc = 1
     guess = 0
     while guess <= cube_num:
-        if abs(guess**3 - cube_num) < epsilon:
+        if abs(guess**3 -cube_num) < epsilon:
             break
         else:
             guess += inc
