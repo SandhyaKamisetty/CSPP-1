@@ -13,7 +13,7 @@ def main():
     instead of the number.
     Read number from the input, store it in variable num.
     '''
-    n_n = 10
+    n_n = int(input())
     for i in range(1, n_n+1):
         if i%3 == 0:
             print("Fizz")
