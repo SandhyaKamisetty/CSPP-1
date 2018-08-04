@@ -17,17 +17,16 @@ def main():
     if the given number is a perfect cube or not
     '''
     cube_num = int(input())
-    epsilon = 0.01
-    inc = 1
-    guess = 0
+    e_n = 0.01
+    i_n = 1
+    g_n = 0
 
-    while guess <= cube_num:
-        if abs(guess**3 -cube_num) < epsilon:
+    while g_n <= cube_num:
+        if abs(g_n**3 -cube_num) < e_n:
             break
         else:
-            guess += inc
-
-    if abs(guess**3 - cube_num) >= epsilon:
+            g_n += i_n
+    if abs(g_n**3 - cube_num) >= e_n:
         print(str(cube_num) + "is not a perfect cube")
     else:
         print(str(cube_num) + "is a perfect cube")
