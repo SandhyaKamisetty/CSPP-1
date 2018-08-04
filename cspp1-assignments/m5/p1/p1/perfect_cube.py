@@ -20,16 +20,17 @@ def main():
     epsilon = 0.01
     inc = 1
     guess = 0
+    
     while guess <= cube_num:
         if abs(guess**3 -cube_num) < epsilon:
             break
         else:
             guess += inc
+    
     if abs(guess**3 - cube_num) >= epsilon:
         print(str(cube_num) + "is not a perfect cube")
     else:
         print(str(cube_num) + "is a perfect cube")
-
     # input is captured in s
     # watch out for the data type of value stored in s
     # your code starts here
