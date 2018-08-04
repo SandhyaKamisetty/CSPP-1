@@ -1,3 +1,4 @@
+'''
 # Write a python program to find the square root of the given number
 # using approximation method
 
@@ -8,14 +9,28 @@
 # testcase 2
 # input: 49
 # output: 6.999999999999991
-
+'''
 def main():
-	s = raw_input()
-	# epsilon and step are initialized
-	# don't change these values
-	epsilon = 0.01
-	step = 0.1
-	# your code starts here
+    '''
+    @author : SandhyaKamisetty
+    Write a python program to find the square root of the given number
+    '''
+    num = int(input())
+    epsilon = 0.01
+    low = 0.0
+    high = num
+    mid = (low+high)/2.0
+    while abs(mid**2-num) >= epsilon:
+        if mid**2 < num:
+            low = mid
+        else:
+            high = mid
+        mid = (low + high)/2.0
+    print(mid)
 
-if __name__== "__main__":
-	main()
+    # epsilon and step are initialized
+    # don't change these values
+    # your code starts here
+
+if __name__ == "__main__":
+    main()
