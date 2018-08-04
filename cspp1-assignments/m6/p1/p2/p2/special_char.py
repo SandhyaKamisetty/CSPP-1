@@ -10,13 +10,14 @@ def main():
     in a given string with a space.
     Read string from the input, store it in variable str_input.
     '''
-    str_input = "ab!@cd"
+    str_input = input()
     a_input = ""
     for i in str_input:
         if i in "!@#$%^&*":
             a_input += " "
-        else: 
+        else:
             a_input += i
+    print(a_input)
 
 if __name__ == "__main__":
     main()
