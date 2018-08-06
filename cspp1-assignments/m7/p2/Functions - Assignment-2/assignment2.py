@@ -29,7 +29,7 @@
 # Updated balance each month = (Monthly unpaid balance) +
  (Monthly interest rate x Monthly unpaid balance)
 '''
-def payingdebtoffinayear(b_n, air_n, set_min):
+def payingdebtoffinayear(b_n, annual_interestrate, set_min):
     '''
     to calculate minimum fixed monthly payment
     '''
@@ -38,7 +38,7 @@ def payingdebtoffinayear(b_n, air_n, set_min):
         return minimum_fixed
     minimum_fixed = 10
     month = 0
-    monthly_interest = (air_n)/12.0
+    monthly_interest = (annual_interestrate)/12.0
     while month <= 12:
         month += 1
         monthly_unpaid = b_n - minimum_fixed
@@ -57,6 +57,5 @@ def main():
     data = data.split(' ')
     data = list(map(float, data))
     print("Lowest payment:", (payingdebtoffinayear(data[0], data[1], data[0])))
-
 if __name__ == "__main__":
     main()
