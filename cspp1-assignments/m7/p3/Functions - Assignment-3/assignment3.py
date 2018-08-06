@@ -81,7 +81,7 @@ def payingdebtoffinayear(b_i, annual_interestrate):
             up_i = mon_payrate
         else:
             break
-        return str(round(mon_payrate, 2))
+    return str(round(mon_payrate, 2))
 
 def main():
     '''
