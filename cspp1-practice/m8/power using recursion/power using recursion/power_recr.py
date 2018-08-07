@@ -16,6 +16,8 @@ def recurpower(base, exp):
     # Your code here
     if exp == 1:
         return base
+    elif exp == 0:
+        return 1
     else:
         return base * recurpower(base, exp - 1)
     
