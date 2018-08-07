@@ -6,24 +6,23 @@
 # This function takes in one number and returns one number.
 '''
 
-def factorial(a):
+def factorial(a_n):
     '''
     n is positive Integer
 
     returns: a positive integer, the factorial of n.
     '''
     # Your code here
-    if a == 1 or a == 0:
+    if a_n in (0, 1):
         return 1
-    else:
-        return (a * factorial(a-1))
+    return a_n * factorial(a_n-1)
     
 def main():
     '''
     @author : SandhyaKamisetty
     '''
-    a = input()
-    print(factorial(int(a)))
+    a_n = input()
+    print(factorial(int(a_n)))
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
