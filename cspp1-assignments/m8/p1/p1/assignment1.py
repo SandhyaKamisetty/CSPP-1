@@ -16,13 +16,11 @@ def factorial(a_n):
     if a_n in (0, 1):
         return 1
     return a_n * factorial(a_n-1)
-    
 def main():
     '''
     @author : SandhyaKamisetty
     '''
     a_n = input()
     print(factorial(int(a_n)))
-
 if __name__ == "__main__":
     main()
