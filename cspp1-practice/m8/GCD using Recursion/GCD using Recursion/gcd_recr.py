@@ -13,7 +13,9 @@ def gcdrecur(a, b):
     returns: a positive integer, the greatest common divisor of a & b.
     '''
     # Your code here
-    if a % b == 0:
+    if a == 0 or b == 0:
+        return 0
+    elif a % b == 0:
         return b
     elif b % a == 0:
         return a
