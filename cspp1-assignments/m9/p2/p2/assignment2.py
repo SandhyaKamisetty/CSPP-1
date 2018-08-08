@@ -14,10 +14,12 @@ def get_guessed_word(secret_word, letters_guessed):
     '''
     # FILL IN YOUR CODE HERE...
     for i in secret_word:
-        if i in letters_guessed:
-            return '_' .join(secret_word)
-    return 
-
+        if i not in letters_guessed:
+            i = '_'
+            s_a = s_a + '_'
+        else:
+            s_a = s_a + i
+    return s_a 
 
 def main():
     '''
