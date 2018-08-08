@@ -16,7 +16,7 @@ def is_word_guessed(secret_word, letters_guessed):
     '''
     # FILL IN YOUR CODE HERE...
     for i in secret_word:
-        if i letters_guessed:
+        if i in letters_guessed:
             print True
         else:
             print False
