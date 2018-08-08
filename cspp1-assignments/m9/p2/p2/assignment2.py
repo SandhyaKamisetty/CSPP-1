@@ -15,7 +15,7 @@ def get_guessed_word(secret_word, letters_guessed):
     # FILL IN YOUR CODE HERE...
     for i in secret_word:
         if i not in letters_guessed:
-            return _join(i)
+            return _.join(i)
     return i
 
 
