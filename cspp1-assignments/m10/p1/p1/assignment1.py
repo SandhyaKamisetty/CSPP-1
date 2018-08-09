@@ -13,7 +13,7 @@ def get_available_letters(letters_guessed):
       yet been guessed.
     '''
     s_a = ""
-    s_b = 'abcdefghijklnmopqrstuvwxyz'
+    s_b = 'abcdefghijklmnopqrstuvwxyz'
     for i in s_b:
         if i not in letters_guessed:
             s_a = s_a + i
