@@ -21,7 +21,6 @@ def main():
     data = input()
     data = data.split()
     print(integer_division(int(data[0]), int(data[1])))
-
-
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
+    
