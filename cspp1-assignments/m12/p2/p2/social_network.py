@@ -13,11 +13,11 @@ def follow(network, arg1, arg2):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
-    d = {}
+    network = {}
     for i in range(0, len(list), 2):
-        if List[i] not in d:
-            d[list[i]] = list[i+1].split(",")
-    return d
+        if List[i] not in network:
+            network[list[i]] = list[i+1].split(",")
+    return network
 d = {}
 def unfollow(network, arg1, arg2):
     '''
