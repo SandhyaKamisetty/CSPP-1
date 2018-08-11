@@ -1,8 +1,9 @@
 '''
     Assignment-1 Create Social Network
+    @author : SandhyaKamisetty
 '''
 
-def create_social_network(data, n):
+def create_social_network(data):
     '''
         The data argument passed to the function is a string
         It represents simple social network data
@@ -43,13 +44,12 @@ def main():
     '''
         handling testcase input and printing output
     '''
-    n = int(input())
-    string = ''
-    L = []
-    for i in range(n):
+    num_n = int(input())
+    list_n = []
+    for i in range(num_n):
         data_input = input().split(" ")
-        L.extend(data_input)
-    print(create_social_network(L, n))
+        list_n.extend(data_input)
+    print(create_social_network(list_n))
 
 if __name__ == "__main__":
     main()
