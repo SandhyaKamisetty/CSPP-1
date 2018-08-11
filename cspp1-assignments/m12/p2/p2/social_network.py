@@ -18,7 +18,7 @@ def follow(network, arg1, arg2):
         if List[i] not in d:
             d[list[i]] = list[i+1].split(",")
     return d
-
+d = {}
 def unfollow(network, arg1, arg2):
     '''
         3 arguments are passed to this function
@@ -29,7 +29,11 @@ def unfollow(network, arg1, arg2):
         update the network dictionary and return it
     '''
     # remove the pass below and start writing your code
-    
+    list_l = []
+    for k in d:
+        if arg1 in d[k]:
+            list_l.append(k)
+    return list_l
 
 def delete_person(network, arg1):
     '''
