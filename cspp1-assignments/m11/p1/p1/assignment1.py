@@ -1,9 +1,12 @@
 '''
 Exercise: Assignment-1
-The first step is to implement some code that allows us to calculate the score for a single word. The function get_word_score should accept as input a string of lowercase letters (a word) and return the integer score for that word, using the game's scoring rules.
+The first step is to implement some code that allows us to
+calculate the score for a single word. The function get_word_score
+should accept as input a string of lowercase letters (a word) and
+return the integer score for that word, using the game's scoring rules.
 '''
 
-def get_word_score(word, n):
+def get_word_score(word_s, n_s):
     """
     Returns the score for a word. Assumes the word is a valid word.
 
@@ -19,9 +22,20 @@ def get_word_score(word, n):
     returns: int >= 0
     """
     # TO DO ... <-- Remove this comment when you code this function
-    
-
-
+    scrabble_letter_values = {
+        'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1,
+        'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1,
+        's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10}
+    b_n = list(word_s)
+    score = 0
+    length = len(word_s)
+    for key in b_n:
+        if key in scrabble_letter_values:
+            score = score + scrabble_letter_values[key]
+    score = score * length
+    if length == 7:
+        return score + 50
+    return score
 def main():
     '''
     Main function for the given problem
