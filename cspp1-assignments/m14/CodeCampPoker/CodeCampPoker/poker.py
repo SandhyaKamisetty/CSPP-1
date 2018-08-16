@@ -26,7 +26,7 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    return len(set([s for f , s in hand])) == 1
+    return len(set([suit_val for face_values, suit_val in hand])) == 1
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -57,7 +57,8 @@ def hand_rank(hand):
         return 2
     elif is_straight:
         return 1
-    return 0
+    else:
+        return 0
 
 
 def poker(hands):
