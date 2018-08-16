@@ -39,8 +39,8 @@ def is_one_pair(hand):
     '''
     return one is_one_pair
     '''
-    ace_values = get_face_values(hand)
-    face_values.sort() 
+    face_values = get_face_values(hand)
+    face_values.sort()
     return len(set(face_values)) == 4
 
 def is_two_pair(hand):
@@ -48,15 +48,16 @@ def is_two_pair(hand):
     return two is_two_pair
     '''
     face_values = get_face_values(hand)
-    face_values.sort() 
-    return len(set(face_values)) == 3 and (len(set(face_values[:2])) == 1 or len(set(face_values[1:3]))) == 1
+    face_values.sort()
+    return len(set(face_values)) == 3 and (len(set(face_values[:2])) == 1 
+        or len(set(face_values[1:3]))) == 1
 
 def is_full_house(hand):
     '''
     return is_full_house
     '''
     face_values = get_face_values(hand)
-    face_values.sort() 
+    face_values.sort()
     return len(set(face_values)) == 2
 
 def is_straight(hand):
