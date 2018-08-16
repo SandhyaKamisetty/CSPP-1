@@ -14,7 +14,7 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    face_values = [dict_num[face] for face, suit_val in hand]
+    face_values = [dict_num[f] for f, suit_val in hand]
     return sum(face_values) - min(face_values)*len(face_values) == 10
     
 def is_flush(hand):
@@ -26,7 +26,7 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    return len(set([suit_val for face, suit_val in hand])) == 1
+    return len(set([s for f, s in hand])) == 1
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
