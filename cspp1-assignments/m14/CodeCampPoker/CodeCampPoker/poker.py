@@ -3,8 +3,8 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-dict_num = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14,
- '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
+DICT_NUM = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14,
+            '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -15,9 +15,9 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    face_values = [dict_num[f] for f, suit_val in hand]
+    face_values = [DICT_NUM[f] for f, suit_val in hand]
     return sum(face_values) - min(face_values)*len(face_values) == 10
-    
+
 def is_flush(hand):
     '''
         How do we find out if the given hand is a flush?
@@ -54,12 +54,11 @@ def hand_rank(hand):
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
         return 3
-    elif is_flush(hand):
+    if is_flush(hand):
         return 2
-    elif is_straight:
+    if is_straight:
         return 1
-    else:
-        return 0
+    return 0
 
 
 def poker(hands):
