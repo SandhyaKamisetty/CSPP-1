@@ -101,7 +101,6 @@ def hand_rank(hand):
     # What would be the logic to determine if a hand is a straight or flush?
     # Let's not think about the logic in the hand_rank function
     # Instead break it down into two sub functions is_straight and is_flush
-
     # check for straight, flush and straight flush
     # best hand of these 3 would be a straight flush with the return value 3
     # the second best would be a flush with the return value 2
@@ -124,7 +123,7 @@ def hand_rank(hand):
         return 2
     if is_one_pair(hand):
         return 1
-return 0
+    return 0
 
 
 def poker(hands):
