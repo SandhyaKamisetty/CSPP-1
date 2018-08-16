@@ -16,7 +16,7 @@ def get_suit_values(hand):
     '''
     return suit value
     '''
-    suit_val = [s for f, s in hand]
+    suit_values = [s for f, s in hand]
     return suit_values
 
 def is_four_of_kind(hand):
