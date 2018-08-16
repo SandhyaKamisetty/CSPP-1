@@ -14,7 +14,7 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    face_values = [dict_num[f] for f, s in hand]
+    face_values = [dict_num[face] for face, suit_val in hand]
     return sum(face_values) - min(face_values)*len(face_values) == 10
     
 def is_flush(hand):
@@ -26,7 +26,7 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    return len(set([suit_val for face_values, suit_val in hand])) == 1
+    return len(set([suit_val for face, suit_val in hand])) == 1
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -51,7 +51,7 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
-    if is_straight(hand) and is_flush:
+    if is_straight(hand) and is_flush(hand):
         return 3
     elif is_flush(hand):
         return 2
