@@ -18,12 +18,12 @@ def get_suit_values(hand):
 
 def is_four_of_kind(hand):
     face_values = get_face_values(hand)
-    face_values.sort() 
+    face_values.sort()
     return len(set(face_values[:-1])) == 1 or len(set(face_values[-4:])) == 1
 
 def is_three_of_kind(hand):
     face_values = get_face_values(hand)
-    face_values.sort() 
+    face_values.sort()
     return len(set(face_values)) == 3
 
 def is_one_pair(hand):
@@ -34,7 +34,7 @@ def is_one_pair(hand):
 def is_two_pair(hand):
     face_values = get_face_values(hand)
     face_values.sort() 
-    return len(set(face_values)) == 3 and len(set(face_values[:2])) == 1 or len(set(face_values[1:3])) == 1
+    return len(set(face_values)) == 3 and (len(set(face_values[:2])) == 1 or len(set(face_values[1:3]))) == 1
 
 def is_full_house(hand):
     face_values = get_face_values(hand)
