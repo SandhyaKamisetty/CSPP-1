@@ -49,8 +49,8 @@ def is_two_pair(hand):
     '''
     face_values = get_face_values(hand)
     face_values.sort()
-    return len(set(face_values)) == 3 and (len(set(face_values[:2])) == 1 
-        or len(set(face_values[1:3]))) == 1
+    return len(set(face_values)) == 3 and (len(set(face_values[:2])) == 1
+                                           or len(set(face_values[1:3]))) == 1
 
 def is_full_house(hand):
     '''
@@ -109,19 +109,19 @@ def hand_rank(hand):
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
         return 8
-    elif is_four_of_kind(hand):
+    if is_four_of_kind(hand):
         return 7
-    elif is_full_house(hand):
+    if is_full_house(hand):
         return 6
-    elif is_flush(hand):
+    if is_flush(hand):
         return 5
-    elif is_straight(hand):
+    if is_straight(hand):
         return 4
-    elif is_three_of_kind(hand):
+    if is_three_of_kind(hand):
         return 3
-    elif is_two_pair(hand):
+    if is_two_pair(hand):
         return 2
-    elif is_one_pair(hand):
+    if is_one_pair(hand):
         return 1
     return 0
 
