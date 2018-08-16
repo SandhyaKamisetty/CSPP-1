@@ -7,6 +7,9 @@ DICT_NUM = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14,
             '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
 
 def get_face_values(hand):
+    '''
+    return face value
+    '''
     face_values = [DICT_NUM[f] for f, suit_val in hand]
     return face_values
 def get_suit_values(hand):
@@ -22,14 +25,17 @@ def is_three_of_kind(hand):
     face_values = get_face_values(hand)
     face_values.sort() 
     return len(set(face_values)) == 3
+
 def is_one_pair(hand):
     ace_values = get_face_values(hand)
     face_values.sort() 
     return len(set(face_values)) == 4
+
 def is_two_pair(hand):
     face_values = get_face_values(hand)
     face_values.sort() 
     return len(set(face_values)) == 3 and len(set(face_values[:2])) == 1 or len(set(face_values[1:3])) == 1
+
 def is_full_house(hand):
     face_values = get_face_values(hand)
     face_values.sort() 
@@ -84,19 +90,19 @@ def hand_rank(hand):
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
         return 8
-    if is_four_of_kind(hand):
+    elif is_four_of_kind(hand):
         return 7
-    if is_full_house(hand):
+    elif is_full_house(hand):
         return 6
-    if is_flush(hand):
+    elif is_flush(hand):
         return 5
-    if is_straight(hand):
+    elif is_straight(hand):
         return 4
-    if is_three_of_kind(hand):
+    elif is_three_of_kind(hand):
         return 3
-    if is_two_pair(hand):
+    elif is_two_pair(hand):
         return 2
-    if is_one_pair(hand):
+    elif is_one_pair(hand):
         return 1
     return 0
 
