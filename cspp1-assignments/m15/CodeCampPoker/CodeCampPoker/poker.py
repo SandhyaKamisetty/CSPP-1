@@ -125,7 +125,6 @@ def hand_rank(hand):
         return 1
     return 0
 
-
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
