@@ -13,30 +13,48 @@ def get_face_values(hand):
     face_values = [DICT_NUM[f] for f, suit_val in hand]
     return face_values
 def get_suit_values(hand):
+    '''
+    return suit value
+    '''
     suit_val = [s for f, s in hand]
     return suit_val
 
 def is_four_of_kind(hand):
+    '''
+    return four of Kind
+    '''
     face_values = get_face_values(hand)
     face_values.sort()
     return len(set(face_values[:-1])) == 1 or len(set(face_values[-4:])) == 1
 
 def is_three_of_kind(hand):
+    '''
+    return three of Kind
+    '''
     face_values = get_face_values(hand)
     face_values.sort()
     return len(set(face_values)) == 3
 
 def is_one_pair(hand):
+    '''
+    return one is_one_pair
+    '''
     ace_values = get_face_values(hand)
     face_values.sort() 
     return len(set(face_values)) == 4
 
 def is_two_pair(hand):
+    '''
+    return two is_two_pair
+    '''
     face_values = get_face_values(hand)
     face_values.sort() 
     return len(set(face_values)) == 3 and (len(set(face_values[:2])) == 1 or len(set(face_values[1:3]))) == 1
 
 def is_full_house(hand):
+    '''
+    return is_full_house
+    '''
     face_values = get_face_values(hand)
     face_values.sort() 
     return len(set(face_values)) == 2
