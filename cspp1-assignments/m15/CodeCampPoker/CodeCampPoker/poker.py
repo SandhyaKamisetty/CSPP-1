@@ -17,7 +17,7 @@ def get_suit_values(hand):
     return suit value
     '''
     suit_val = [s for f, s in hand]
-    return suit_val
+    return suit_values
 
 def is_four_of_kind(hand):
     '''
@@ -69,7 +69,7 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    face_values = [DICT_NUM[f] for f, suit_val in hand]
+    face_values = [DICT_NUM[f] for f, suit_values in hand]
     return sum(face_values) - min(face_values)*len(face_values) == 10
 
 def is_flush(hand):
