@@ -83,6 +83,7 @@ def is_flush(hand):
         Write the code for it and return True if it is a flush else return False
     '''
     return len(set(s for f, s in hand)) == 1
+
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
