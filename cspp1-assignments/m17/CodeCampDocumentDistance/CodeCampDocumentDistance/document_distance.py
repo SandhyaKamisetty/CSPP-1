@@ -26,9 +26,9 @@ def calculate_similarity(dictionary_values):
     '''
     calculating frequency
     '''
-    numerator = sum([k[0] * k[1] for k in dictionary_values()])
-    d1_a = math.sqrt(sum([k[0] ** 2 for k in dictionary_values()]))
-    d2_a = math.sqrt(sum([k[1] ** 2 for k in dictionary_values()]))
+    numerator = sum([k[0] * k[1] for k in dictionary_values.values()])
+    d1_a = math.sqrt(sum([k[0] ** 2 for k in dictionary_values.values()]))
+    d2_a = math.sqrt(sum([k[1] ** 2 for k in dictionary_values.values()]))
     return numerator/(d1_a*d2_a)
 def create_dictionary(words_list):
     '''
