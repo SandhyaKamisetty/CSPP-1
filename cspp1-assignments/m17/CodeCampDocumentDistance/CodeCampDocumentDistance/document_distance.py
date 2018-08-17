@@ -8,11 +8,11 @@ def combine_dictionaries(dictionary_one, dictionary_two):
     two dictionaries are combined
     '''
     dictionary = {}
-    
+
     for word in dictionary_one:
         if word in dictionary_two:
             dictionary[word] = [dictionary_one[word], dictionary_two[word]]
-     
+
     for word in dictionary_one:
         if word not in dictionary:
             dictionary[word] = [dictionary_one[word], 0]
@@ -60,6 +60,7 @@ def similarity(text_1, text_2):
     dictionary_one = create_dictionary(clean_given_text(text_1))
     dictionary_two = create_dictionary(clean_given_text(text_2))
     dictionary = combine_dictionaries(dictionary_one, dictionary_two)
+    print(dictionary)
     return calculate_similarity(dictionary)
 
 def load_stopwords(filename):
