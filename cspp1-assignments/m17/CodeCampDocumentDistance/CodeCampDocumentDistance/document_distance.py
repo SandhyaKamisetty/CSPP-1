@@ -60,12 +60,12 @@ def similarity(text_1, text_2):
     dictionary = combine_dictionaries(dictionary_one, dictionary_two)
     return calculate_similarity(dictionary)
 
-def load_stopwords(filename_n):
+def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
     '''
     stopwords = {}
-    with open(filename_n, 'r') as filename_n:
+    with open(filename, 'r') as filename_n:
         for line in filename_n:
             stopwords[line.strip()] = 0
     return stopwords
