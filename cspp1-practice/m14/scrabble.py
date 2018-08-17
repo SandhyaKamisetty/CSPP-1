@@ -70,7 +70,7 @@ def get_wordscore(word, n_in):
             count = count + SCRABBLE_LETTER_VALUES[i]
         if len(word) == n_in:
             return count * len(word) + 50
-        return count * len(word)
+    return count * len(word)
 
 # Problem #2: Make sure you understand how this function works and what it does!
 
