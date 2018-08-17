@@ -8,8 +8,8 @@ def combine_dictionaries(dictionary_str1, dictionary_str2):
     str2 dictionaries are combined
     '''
     dictionary = {}
-    for word in dictionary_str1, dictionary_str1:
-        if word in dictionary_str2:
+    for word in dictionary_str1:
+        for word in dictionary_str2:
             dictionary[word] = [dictionary_str1[word], dictionary_str2[word]]
 
     for word in dictionary_str1:
