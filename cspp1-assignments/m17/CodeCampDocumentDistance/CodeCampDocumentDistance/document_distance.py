@@ -20,7 +20,7 @@ def combine_dictionaries(dictionary_one, dictionary_two):
         if word not in dictionary:
             dictionary[word] = [0, dictionary_two[word]]
     
-     return dictionary
+    return dictionary
 
 def calculate_similarity(dictionary_values):
     '''
@@ -58,7 +58,7 @@ def similarity(text_1, text_2):
     Compute the document distance as given in the PDF
     '''
     dictionary_one = create_dictionary(clean_given_text(text_1))
-    dictionary_two = clean_given_text(text_2)
+    dictionary_two = create_dictionary(clean_given_text(text_2))
     dictionary = combine_dictionaries(dictionary_one, dictionary_two)
     return calculate_similarity(dictionary)
 
