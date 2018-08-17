@@ -20,7 +20,7 @@ def combine_dictionaries(dictionary_one, dictionary_two):
             dictionary[word] = [0, dictionary_two[word]]
     return dictionary
 
-def calculate_similarity(dictionary):
+def calculate_similarity(dictionary_values):
     '''
     calculating frequency
     '''
