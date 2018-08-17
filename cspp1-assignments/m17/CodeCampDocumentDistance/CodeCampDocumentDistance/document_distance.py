@@ -19,7 +19,7 @@ def combine_dictionaries(dictionary_one, dictionary_two):
     for word in dictionary_two:
         if word not in dictionary:
             dictionary[word] = [0, dictionary_two[word]]
-    
+
     return dictionary
 
 def calculate_similarity(dictionary_values):
@@ -38,7 +38,7 @@ def create_dictionary(words_list):
     stopwords = load_stopwords("stopwords.txt")
     for word in words_list:
         word = word.strip()
-        if word not in stopwords and len(word) > 0:
+        if word not in stopwords and words_list.len(word) > 0:
             if word not in dictionary:
                 dictionary[word] = 1
             else:
