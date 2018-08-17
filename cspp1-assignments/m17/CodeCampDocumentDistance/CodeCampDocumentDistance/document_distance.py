@@ -28,15 +28,15 @@ def calculate_similarity(dictionary_values):
     d1_a = math.sqrt(sum([k[0] ** 2 for k in dictionary_values()]))
     d2_a = math.sqrt(sum([k[1] ** 2 for k in dictionary_values()]))
     return numerator/(d1_a*d2_a)
-def create_dictionary(word_list):
+def create_dictionary(words_list):
     '''
     returns dictionary, takes input as word list
     '''
     dictionary = {}
     stopwords = load_stopwords("stopwords.txt")
-    for word in word_list:
+    for word in words_list:
         word = word.strip()
-        if word not in stopwords and len(word) > 0:
+        if word not in stopwords and len(word) != 0:
             if word not in dictionary:
                 dictionary[word] = 1
             else:
