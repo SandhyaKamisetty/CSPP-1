@@ -25,9 +25,9 @@ def calculate_similarity(dictionary_values):
     calculating frequency
     '''
     numerator = sum([k[0] * k[1] for k in dictionary_values()])
-    d1 = math.sqrt(sum([k[0] ** 2 for k in dictionary_values()]))
-    d2 = math.sqrt(sum([k[1] ** 2 for k in dictionary_values()]))
-    return numerator/(d1*d2)
+    d1_a = math.sqrt(sum([k[0] ** 2 for k in dictionary_values()]))
+    d2_a = math.sqrt(sum([k[1] ** 2 for k in dictionary_values()]))
+    return numerator/(d1_a*d2_a)
 def create_dictionary(word_list):
     '''
     returns dictionary, takes input as word list
@@ -60,13 +60,13 @@ def similarity(text_1, text_2):
     dictionary = combine_dictionaries(dictionary_one, dictionary_two)
     return calculate_similarity(dictionary)
 
-def load_stopwords(filename):
+def load_stopwords(filename_n):
     '''
         loads stop words from a file and returns a dictionary
     '''
     stopwords = {}
-    with open(filename, 'r') as filename:
-        for line in filename:
+    with open(filename_n, 'r') as filename_n:
+        for line in filename_n:
             stopwords[line.strip()] = 0
     return stopwords
 
