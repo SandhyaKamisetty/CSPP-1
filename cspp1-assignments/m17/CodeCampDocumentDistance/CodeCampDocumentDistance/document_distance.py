@@ -58,7 +58,7 @@ def similarity(text_1, text_2):
     dictionary_one = clean_given_text(text_1)
     dictionary_two = clean_given_text(text_2)
     dictionary = combine_dictionaries(dictionary_one, dictionary_two)
-    return calculate_similarity(dictionary_values)
+    return calculate_similarity(dictionary)
 
 def load_stopwords(filename):
     '''
