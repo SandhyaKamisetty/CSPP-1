@@ -36,7 +36,7 @@ def create_dictionary(words_list):
     stopwords = load_stopwords("stopwords.txt")
     for word in words_list:
         word = word.strip()
-        if word not in stopwords and words_list.len(word) > 0:
+        if word not in stopwords and len(word) > 0:
             if word not in dictionary:
                 dictionary[word] = 1
             else:
@@ -67,7 +67,7 @@ def load_stopwords(filename):
     stopwords = {}
     with open(filename, 'r') as filename_n:
         for line in filename_n:
-            stopwords[line.str1ip()] = 0
+            stopwords[line.strip()] = 0
     return stopwords
 
 def main():
