@@ -3,21 +3,21 @@
 '''
 import re
 import math
-def combine_dictionaries(dictionary_str1, dictionary_str2):
+def combine_dictionaries(dictionary_one, dictionary_two):
     '''
-    str2 dictionaries are combined
+    two dictionaries are combined
     '''
     dictionary = {}
-    for word in dictionary_str1:
-        for word in dictionary_str2:
-            dictionary[word] = [dictionary_str1[word], dictionary_str2[word]]
-
-    for word in dictionary_str1:
+    for word in dictionary_one:
+        if word in dictionary_two:
+            dictionary[word] = [dictionary_one[word], dictionary_two[word]]
+     
+    for word in dictionary_one:
         if word not in dictionary:
-            dictionary[word] = [dictionary_str1[word], 0]
-    for word in dictionary_str2:
+            dictionary[word] = [dictionary_one[word], 0]
+    for word in dictionary_two:
         if word not in dictionary:
-            dictionary[word] = [0, dictionary_str2[word]]
+            dictionary[word] = [0, dictionary_two[word]]
     return dictionary
 
 def calculate_similarity(dictionary_values):
@@ -45,7 +45,7 @@ def create_dictionary(words_list):
 
 def clean_given_text(text_input):
     '''
-    takes str1ing and return list
+    takes oneing and return list
     '''
     words = text_input.lower().strip().replace('\'', '')
     regex = re.compile('[^a-z]')
@@ -55,9 +55,9 @@ def similarity(text_1, text_2):
     '''
     Compute the document distance as given in the PDF
     '''
-    dictionary_str1 = clean_given_text(text_1)
-    dictionary_str2 = clean_given_text(text_2)
-    dictionary = combine_dictionaries(dictionary_str1, dictionary_str2)
+    dictionary_one = clean_given_text(text_1)
+    dictionary_two = clean_given_text(text_2)
+    dictionary = combine_dictionaries(dictionary_one, dictionary_two)
     return calculate_similarity(dictionary)
 
 def load_stopwords(filename):
@@ -72,7 +72,7 @@ def load_stopwords(filename):
 
 def main():
     '''
-        take str2 inputs and call the similarity function
+        take two inputs and call the similarity function
     '''
     input1 = input()
     input2 = input()
