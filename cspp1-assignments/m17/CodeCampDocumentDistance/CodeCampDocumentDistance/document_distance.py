@@ -41,7 +41,7 @@ def create_dictionary(words_list):
         if word not in stopwords and len(word) > 0:
             if word not in dictionary:
                 dictionary[word] = 1
-            else: 
+            else:
                 dictionary[word] += 1
     return dictionary
 
@@ -60,6 +60,7 @@ def similarity(text_1, text_2):
     dictionary_one = create_dictionary(clean_given_text(text_1))
     dictionary_two = create_dictionary(clean_given_text(text_2))
     dictionary = combine_dictionaries(dictionary_one, dictionary_two)
+    print(dictionary)
     return calculate_similarity(dictionary)
 
 def load_stopwords(filename):
