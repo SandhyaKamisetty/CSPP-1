@@ -24,7 +24,7 @@ def calculate_similarity(dictionary):
     '''
     calculating frequency
     '''
-    numerator = sum([key[0] * key[1] for k in dictionary_values()])
+    numerator = sum([k[0] * k[1] for k in dictionary_values()])
     d1 = math.sqrt(sum([k[0] ** 2 for k in dictionary_values()]))
     d2 = math.sqrt(sum([k[1] ** 2 for k in dictionary_values()]))
     return numerator/(d1*d2)
