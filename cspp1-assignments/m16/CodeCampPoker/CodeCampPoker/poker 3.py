@@ -152,7 +152,7 @@ if __name__ == "__main__":
     HANDS = []
     for x in range(COUNT):
         line = input()
-        hand_list = line.split(" ")
-        HANDS.append(hand_list)
+        ha = line.split(" ")
+        HANDS.append(ha)
     # test the poker function to see how it works
     print(' '.join(poker(HANDS)))
