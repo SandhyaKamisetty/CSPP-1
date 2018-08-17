@@ -38,7 +38,7 @@ def create_dictionary(words_list):
     stopwords = load_stopwords("stopwords.txt")
     for word in words_list:
         word = word.strip()
-        if word not in stopwords and len(word) > 0:
+        if word not in stopwords and len(word) > 0
             if word not in dictionary:
                 dictionary[word] = 1
             else: 
@@ -60,7 +60,6 @@ def similarity(text_1, text_2):
     dictionary_one = create_dictionary(clean_given_text(text_1))
     dictionary_two = create_dictionary(clean_given_text(text_2))
     dictionary = combine_dictionaries(dictionary_one, dictionary_two)
-    print(dictionary)
     return calculate_similarity(dictionary)
 
 def load_stopwords(filename):
