@@ -8,14 +8,14 @@ def combine_dictionaries(dictionary_one, dictionary_two):
     two dictionaries are combined
     '''
     dictionary = {}
-    for word in dictionary_one and dictionary_two:
+    for word in dictionary_one, dictionary_two:
         if word in dictionary_two:
             dictionary[word] = [dictionary_one[word], dictionary_two[word]]
 
     for word in dictionary_one:
         if word not in dictionary:
             dictionary[word] = [dictionary_one[word], 0]
-    for word in dictionary:
+    for word in dictionary_two:
         if word not in dictionary:
             dictionary[word] = [0, dictionary_two[word]]
     return dictionary
