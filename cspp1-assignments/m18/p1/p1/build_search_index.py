@@ -21,6 +21,7 @@
     }
 '''
 import re
+import math
 # helper function to load the stop words from a file
 def load_stopwords(filename):
     '''
@@ -97,7 +98,7 @@ def print_search_index(index):
     for key in keys:
         print(key, " - ", index[key])
     document = document_search(word_list(index))
-    return 
+    #return 
 
 # main function that loads the docs from files
 def main():
