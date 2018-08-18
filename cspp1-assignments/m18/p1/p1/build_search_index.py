@@ -32,6 +32,12 @@ def load_stopwords(filename):
             stopwords[line.strip()] = 0
     return stopwords
 
+def document_search(document):
+    '''
+    '''
+    dictionary = {}
+    for word in document:
+
 
 def word_list(text_input):
     '''
@@ -73,6 +79,14 @@ def build_search_index(docs_list):
 
 # helper function to print the search index
 # use this to verify how the search index looks
+def calculate_frequency(documents_values):
+    document = input()
+    for key in range(len(documents)):
+        numerator = sum([key[0] * key[1] for key in document_values.values()])
+        d1_a = math.sqrt(sum([key[0] ** 2 for key in document_values.values()]))
+        d2_a = math.sqrt(sum([key[1] ** 2 for key in document_values.values()]))
+        return numerator/(d1_a*d2_a)
+
 def print_search_index(index):
     '''
         print the search index
@@ -80,7 +94,8 @@ def print_search_index(index):
     keys = sorted(index.keys())
     for key in keys:
         print(key, " - ", index[key])
-    return word_list(index) 
+    document = document_search(word_list(index))
+    return 
 
 # main function that loads the docs from files
 def main():
