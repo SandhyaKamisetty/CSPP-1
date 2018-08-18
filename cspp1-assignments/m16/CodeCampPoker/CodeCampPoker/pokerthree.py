@@ -9,7 +9,7 @@ def card_ranks(cards):
     '''
     return a sorted list of ranks
     '''
-    ranks = ['--23456789TJQKA'.index(r) for f, s in cards]
+    ranks = ['--23456789TJQKA'.index(f) for f, s in cards]
     ranks.sort(reverse=True)
     return ranks
 #def get_face_values(hand):
