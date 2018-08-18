@@ -38,11 +38,12 @@ def is_two_pair(ranks):
     '''
     return two is_two_pair
     '''
-    face_values = get_face_values(hand)
-    face_values.sort()
-    return len(set(face_values)) == 3 and (len(set(face_values[:2])) == 1
-                                           or len(set(face_values[2:4]))) == 1
-
+    pair = kind(2, ranks)
+    lowpair = kind(2, list(reversed(ranks)))
+    if pair and lowpair != pair:
+        return (pair, lowpair)
+    else:
+        return None
 
 def is_straight(ranks):
     '''
@@ -54,8 +55,7 @@ def is_straight(ranks):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    face_values = [DICT_NUM[f] for f, suit_values in hand]
-    return sum(face_values) - min(face_values)*len(face_values) == 10
+    return (max(ranks)-min(ranks) == 4) and len(set(ranks)) == 5
 
 def is_flush(hand):
     '''
@@ -66,7 +66,8 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    return len(set(s for f, s in hand)) == 1
+    suits = [s for r, s in hand]
+    return len(set(suits)) == 1
 
 def hand_rank(hand):
     '''
