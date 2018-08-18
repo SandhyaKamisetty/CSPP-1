@@ -80,6 +80,8 @@ def build_search_index(docs_list):
 # helper function to print the search index
 # use this to verify how the search index looks
 def calculate_frequency(documents_values):
+    '''
+    '''
     document = input()
     for key in range(len(documents)):
         numerator = sum([key[0] * key[1] for key in document_values.values()])
