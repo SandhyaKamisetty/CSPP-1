@@ -92,8 +92,9 @@ def build_search_index(docs_list):
 # use this to verify how the search index looks
 def calculate_frequency(documents_values):
     '''
+    frequency of values are calculated
     '''
-    for key in range(len(documents)):
+    for key in range(len(documents_values)):
         numerator = sum([key[0] * key[1] for key in documents_values.values()])
         d1_a = math.sqrt(sum([key[0] ** 2 for key in documents_values.values()]))
         d2_a = math.sqrt(sum([key[1] ** 2 for key in documents_values.values()]))
@@ -110,7 +111,6 @@ def print_search_index(index):
     document_two = build_search_index(word_list(index))
     dictionary = combine_documents(document_one, document_two)
     return calculate_frequency(dictionary)
-     
 
 # main function that loads the docs from files
 def main():
