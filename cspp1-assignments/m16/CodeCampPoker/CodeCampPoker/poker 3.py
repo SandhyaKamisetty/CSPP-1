@@ -5,7 +5,13 @@
 '''
 DICT_NUM = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14,
             '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
-
+def card_ranks(cards):
+    '''
+    return a sorted list of ranks
+    '''
+    ranks = ['--23456789TJQKA'.index(r) for r, s in cards]
+    ranks.sort(reverse=True)
+    return ranks
 def get_face_values(hand):
     '''
     return face value
@@ -107,23 +113,27 @@ def hand_rank(hand):
     # third would be a straight with the return value 1
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
+    return_value = None
+    ranks = card_ranks(hand)
     if is_straight(hand) and is_flush(hand):
-        return 8
+        return_value = (8, max(ranks))
     if is_four_of_kind(hand):
-        return 7
+        return_value = (7, max(ranks))
     if is_full_house(hand):
-        return 6
+        return_value = (6, max(ranks))
     if is_flush(hand):
-        return 5
+        return_value = (5, max(ranks))
     if is_straight(hand):
-        return 4
+        return_value = (4, max(ranks))
     if is_three_of_kind(hand):
-        return 3
+        return_value = (3, max(ranks))
     if is_two_pair(hand):
-        return 2
+        return_value = (2, max(ranks))
     if is_one_pair(hand):
-        return 1
-    return 0
+        return_value = (1, max(ranks))
+    else:
+        return_value = (0, ranks)
+    return return_value
 
 def poker(hands):
     '''
