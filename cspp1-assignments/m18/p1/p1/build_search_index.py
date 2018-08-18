@@ -23,6 +23,23 @@
 import re
 import math
 # helper function to load the stop words from a file
+def combine_documents(document_one, document_two):
+    '''
+    combining documents
+    '''
+    dictionary = {}
+    for word in document_one:
+        if word in document_two:
+            dictionary[word] = [document_one[word], document_two[word]]
+
+    for word in document_one:
+        if word not in dictionary:
+            dictionary[word] = [document_one[word], 0]
+    for word in document_two:
+        if word not in dictionary:
+            dictionary[word] = [0, document_two[word]]
+
+    return dictionary
 def load_stopwords(filename):
     '''
         loads stop words from a file and returns a dictionary
@@ -32,13 +49,6 @@ def load_stopwords(filename):
         for line in f_stopwords:
             stopwords[line.strip()] = 0
     return stopwords
-
-def document_search(document):
-    '''
-    '''
-    dictionary = {}
-    for word in document:
-
 
 def word_list(text_input):
     '''
@@ -97,8 +107,11 @@ def print_search_index(index):
     keys = sorted(index.keys())
     for key in keys:
         print(key, " - ", index[key])
-    document = document_search(word_list(index))
-    #return 
+    document_one = build_search_index(word_list(index))
+    document_two = build_search_index(word_list(index))
+    dictionary = combine_documents(document_one, document_two)
+    return calculate_frequency(dictionary)
+     
 
 # main function that loads the docs from files
 def main():
