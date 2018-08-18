@@ -80,7 +80,7 @@ def print_search_index(index):
     keys = sorted(index.keys())
     for key in keys:
         print(key, " - ", index[key])
-    return word_list(text_input) 
+    return word_list(index) 
 
 # main function that loads the docs from files
 def main():
