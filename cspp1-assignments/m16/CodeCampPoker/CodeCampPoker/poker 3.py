@@ -107,7 +107,7 @@ def hand_rank(hand):
     elif kind(3, ranks):                           
         return_value = (3, kind(3, ranks), ranks)
     elif is_two_pair(ranks):                          
-        return_value = (2, two_pair(ranks), ranks)
+        return_value = (2, is_two_pair(ranks), ranks)
     elif kind(2, ranks):                           
         return_value = (1, kind(2, ranks), ranks)
     else:                                          
