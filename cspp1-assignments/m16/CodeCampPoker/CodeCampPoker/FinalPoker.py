@@ -52,7 +52,7 @@ def hand_rank(hand):
         return_value = (2, two_pair(ranks), ranks)
     elif kind(2, ranks):                           # kind
         return_value = (1, kind(2, ranks), ranks)
-    else:                                          # high card
+                                              # high card
         return_value = (0, ranks)
     return return_value
 
