@@ -9,7 +9,7 @@ def card_ranks(cards):
     '''
     return a sorted list of ranks
     '''
-    ranks = ['--23456789TJQKA'.index(r) for r, s in cards]
+    ranks = ['--23456789TJQKA'.index(r) for f, s in cards]
     ranks.sort(reverse=True)
     return ranks
 #def get_face_values(hand):
@@ -66,7 +66,7 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    suits = [s for r, s in hand]
+    suits = [s for f, s in hand]
     return len(set(suits)) == 1
 
 def hand_rank(hand):
