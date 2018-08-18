@@ -77,7 +77,7 @@ def build_search_index(docs_list):
         # add or update the words of the doc to the search index
 
     # return search index
-    dictionary = {} 
+    dictionary = {}
     stopwords = load_stopwords("stopwords.txt")
     for word in docs_list:
         word = word.strip()
@@ -93,16 +93,15 @@ def build_search_index(docs_list):
 def calculate_frequency(documents_values):
     '''
     '''
-    document = input()
     for key in range(len(documents)):
-        numerator = sum([key[0] * key[1] for key in document_values.values()])
-        d1_a = math.sqrt(sum([key[0] ** 2 for key in document_values.values()]))
-        d2_a = math.sqrt(sum([key[1] ** 2 for key in document_values.values()]))
+        numerator = sum([key[0] * key[1] for key in documents_values.values()])
+        d1_a = math.sqrt(sum([key[0] ** 2 for key in documents_values.values()]))
+        d2_a = math.sqrt(sum([key[1] ** 2 for key in documents_values.values()]))
         return numerator/(d1_a*d2_a)
 
 def print_search_index(index):
     '''
-        print the search index
+    print the search index
     '''
     keys = sorted(index.keys())
     for key in keys:
