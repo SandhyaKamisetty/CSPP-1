@@ -3,8 +3,8 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-#DICT_NUM = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14,
-            #'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
+DICT_NUM = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14,
+            '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
 def card_ranks(cards):
     '''
     return a sorted list of ranks
@@ -12,44 +12,29 @@ def card_ranks(cards):
     ranks = ['--23456789TJQKA'.index(r) for r, s in cards]
     ranks.sort(reverse=True)
     return ranks
-def get_face_values(hand):
-    '''
-    return face value
-    '''
-    face_values = [DICT_NUM[f] for f, suit_val in hand]
-    return face_values
-def get_suit_values(hand):
-    '''
-    return suit value
-    '''
-    suit_values = [s for f, s in hand]
-    return suit_values
+#def get_face_values(hand):
+   # '''
+    #return face value
+    #'''
+    #face_values = [DICT_NUM[f] for f, suit_val in hand]
+    #return face_values
+#def get_suit_values(hand):
+    #'''
+    #return suit value
+    #'''
+    #suit_values = [s for f, s in hand]
+    #return suit_values
 
-def is_four_of_kind(hand):
+def kind(count, ranks):
     '''
-    return four of Kind
+    Return all three kind, four kind, one pair.
     '''
-    face_values = get_face_values(hand)
-    face_values.sort()
-    return len(set(face_values[:-1])) == 1 or len(set(face_values[-4:])) == 1
+    for rank in ranks:
+        if ranks.count(rank) == count:
+            return rank
+    return None
 
-def is_three_of_kind(hand):
-    '''
-    return three of Kind
-    '''
-    face_values = get_face_values(hand)
-    face_values.sort()
-    return len(set(face_values)) == 3
-
-def is_one_pair(hand):
-    '''
-    return one is_one_pair
-    '''
-    face_values = get_face_values(hand)
-    face_values.sort()
-    return len(set(face_values)) == 4
-
-def is_two_pair(hand):
+def is_two_pair(ranks):
     '''
     return two is_two_pair
     '''
@@ -58,15 +43,8 @@ def is_two_pair(hand):
     return len(set(face_values)) == 3 and (len(set(face_values[:2])) == 1
                                            or len(set(face_values[2:4]))) == 1
 
-def is_full_house(hand):
-    '''
-    return is_full_house
-    '''
-    face_values = get_face_values(hand)
-    face_values.sort()
-    return len(set(face_values)) == 2
 
-def is_straight(hand):
+def is_straight(ranks):
     '''
         How do we find out if the given hand is a straight?
         The hand has a list of cards represented as strings.
@@ -115,26 +93,25 @@ def hand_rank(hand):
     # max in poker function uses these return values to select the best hand
     return_value = None
     ranks = card_ranks(hand)
-    if is_straight(hand) and is_flush(hand):
+    if straight(ranks) and flush(hand):           
         return_value = (8, max(ranks))
-    if is_four_of_kind(hand):
-        return_value = (7, max(ranks))
-    if is_full_house(hand):
-        return_value = (6, max(ranks))
-    if is_flush(hand):
-        return_value = (5, max(ranks))
-    if is_straight(hand):
+    elif kind(4, ranks):                           
+        return_value = (7, kind(4, ranks), kind(1, ranks))
+    elif kind(3, ranks) and kind(2, ranks):        
+        return_value = (6, kind(3, ranks), kind(2, ranks))
+    elif flush(hand):                              
+        return_value = (5, ranks)
+    elif straight(ranks):                          
         return_value = (4, max(ranks))
-    if is_three_of_kind(hand):
-        return_value = (3, max(ranks))
-    if is_two_pair(hand):
-        return_value = (2, max(ranks))
-    if is_one_pair(hand):
-        return_value = (1, max(ranks))
-    else:
+    elif kind(3, ranks):                           
+        return_value = (3, kind(3, ranks), ranks)
+    elif two_pair(ranks):                          
+        return_value = (2, two_pair(ranks), ranks)
+    elif kind(2, ranks):                           
+        return_value = (1, kind(2, ranks), ranks)
+    else:                                          
         return_value = (0, ranks)
     return return_value
-
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
