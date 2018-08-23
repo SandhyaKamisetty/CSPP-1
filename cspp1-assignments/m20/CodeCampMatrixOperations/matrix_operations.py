@@ -1,3 +1,6 @@
+'''
+@author : SandhyaKamisetty
+'''
 def mult_matrix(matrix_1, matrix_2):
     '''
         check if the matrix1 columns = matrix2 rows
@@ -8,22 +11,25 @@ def mult_matrix(matrix_1, matrix_2):
     '''
     rows = len(matrix_1)
     columns = len(matrix_1[0])
-    mult_matrix = generate_matrix(rows, columns)
+    addition_mat = generate_matrix(rows, columns)
     if len(matrix_1[0]) == len(matrix_2):
         for i in range(rows):
             for j in range(matrix_2[0]):
                 for k in range(matrix_2):
-                    mult_matrix[i][j] += matrix_1[i][k] * matrix_2[k][i]
-        return mult_matrix
-    else:
-        print("Error: Matrix shapes invalid for multiplication")
-        return None
+                    addition_mat[i][j] += matrix_1[i][k] * matrix_2[k][i]
+        return addition_mat
+
+    print("Error: Matrix shapes invalid for multiplication")
+    return None
 
 
 
 def generate_matrix(rows, columns):
-    add_matrix = [[0 for i in range(columns)] for j in range(rows)]
-    return add_matrix
+    '''
+    creating matrix 
+    '''
+    addition_mat = [[0 for i in range(columns)] for j in range(rows)]
+    return addition_mat
 
 def add_matrix(matrix_1, matrix_2):
     '''
@@ -35,17 +41,17 @@ def add_matrix(matrix_1, matrix_2):
     '''
     rows = len(matrix_1)
     columns = len(matrix_1[0])
-    add_matrix = generate_matrix(rows, columns)
+    addition_mat = generate_matrix(rows, columns)
     if len(matrix_1) == len(matrix_2) and len(matrix_1[0]) == len(matrix_2[0]):
         for i in range(row):
             for j in range(columns):
-                add_matrix[i][j] += matrix_1[i][j] + matrix_2[i][j]
-        return add_matrix
-    else:
-        print("Error: Matrix shapes invalid for addition")
-        return None
+                addition_mat[i][j] += matrix_1[i][j] + matrix_2[i][j]
+        return addition_mat
+    
+    print("Error: Matrix shapes invalid for addition")
+    return None
 
-def read_matrix(matrix_1, matrix_2):
+def read_matrix():
     '''
         read the matrix dimensions from input
         create a list of lists and read the numbers into it
@@ -65,6 +71,9 @@ def read_matrix(matrix_1, matrix_2):
             return None
 
 def main():
+    '''
+    main function
+    '''
     # read matrix 1
     matrix_1 = read_matrix()
     if matrix_1 is None:
