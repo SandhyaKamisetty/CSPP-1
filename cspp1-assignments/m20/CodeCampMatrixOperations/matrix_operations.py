@@ -45,7 +45,7 @@ def add_matrix(matrix_1, matrix_2):
     if len(matrix_1) == len(matrix_2) and len(matrix_1[0]) == len(matrix_2[0]):
         for i in range(rows):
             for j in range(columns):
-                addition_mat[i][j] += matrix_1[i][j] + matrix_2[i][j]
+                addition_mat[i][j] = matrix_1[i][j] + matrix_2[i][j]
         return addition_mat
 
     print("Error: Matrix shapes invalid for addition")
