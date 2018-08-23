@@ -66,9 +66,9 @@ def read_matrix():
         list_matrix_rows = input().split()
         if columns == len(list_matrix_rows):
             matrix_list.append(int(i) for i in list_matrix_rows)
-        else:
-            print("Error: Invalid input for the matrix")
-            return None
+    
+        print("Error: Invalid input for the matrix")
+        return None
 
 def main():
     '''
