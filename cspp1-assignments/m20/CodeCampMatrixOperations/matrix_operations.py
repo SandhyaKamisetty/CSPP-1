@@ -41,12 +41,12 @@ def add_matrix(matrix_1, matrix_2):
     '''
     rows = len(matrix_1)
     columns = len(matrix_1[0])
-    addition_mat = generate_matrix(rows, columns)
+    addition_mat1 = generate_matrix(rows, columns)
     if len(matrix_1) == len(matrix_2) and len(matrix_1[0]) == len(matrix_2[0]):
         for i in range(rows):
             for j in range(columns):
-                addition_mat[i][j] = matrix_1[i][j] + matrix_2[i][j]
-        return addition_mat
+                addition_mat1[i][j] = matrix_1[i][j] + matrix_2[i][j]
+        return addition_mat1
     else:
         print("Error: Matrix shapes invalid for addition")
         return None
@@ -68,7 +68,7 @@ def read_matrix():
             matrix_list.append(int(i) for i in list_matrix_rows)
         else:
             print("Error: Invalid input for the matrix")
-            return None
+    return matrix_list    
 
 def main():
     '''
