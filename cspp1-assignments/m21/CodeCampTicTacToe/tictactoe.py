@@ -9,7 +9,7 @@ def read_input():
     for _ in range(3):
         list_matrix_rows = input().strip().split()
         tic_tac_toe_list.append(list_matrix_rows)
-    return list_matrix_rows
+    return tic_tac_toe_list
 
 
 def is_valid_input(matrix):
