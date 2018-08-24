@@ -82,3 +82,5 @@ def main():
                 print('draw')
     else:
         print("invalid input")
+
+main()
