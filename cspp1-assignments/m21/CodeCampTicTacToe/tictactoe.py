@@ -30,7 +30,7 @@ def is_valid_game(matrix):
     for row in matrix:
         x_count += row.count('x')
         o_count += row.count('o')
-        if o_count > 5 or x_count > 5:
+        if o_count > 5 or x_count > 5 or x_count == o_count:
             return False
     return True
 
