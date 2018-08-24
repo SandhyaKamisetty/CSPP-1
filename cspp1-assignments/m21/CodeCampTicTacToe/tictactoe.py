@@ -40,8 +40,8 @@ def check_rows_columns(matrix, check_var):
     '''
     for row in matrix:
         if len(set(row)) == 1 and row[0] == check_var:
-            return False
-    return True
+            return True
+    return False
 
 def new_transpose_matrix(matrix, increment, temp_matrix):
     '''
