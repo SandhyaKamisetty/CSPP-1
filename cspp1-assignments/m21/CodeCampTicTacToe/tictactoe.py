@@ -80,6 +80,8 @@ def main():
                 print('o')
             else:
                 print('draw')
+        else:
+            print("invalid game")
     else:
         print("invalid input")
 
