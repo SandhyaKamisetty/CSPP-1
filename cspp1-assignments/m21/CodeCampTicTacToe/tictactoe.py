@@ -58,8 +58,8 @@ def decide_winner(matrix, winner_var):
     deciding winner
     '''
     transpose_matrix = new_transpose_matrix(matrix, 0, [])
-    if is_valid_game(matrix, winner_var) or\
-       is_valid_game(transpose_matrix, winner_var):
+    if check_rows_columns(matrix, winner_var) or\
+       check_rows_columns(transpose_matrix, winner_var):
         return True
     elif (matrix[0][0] == matrix[1][1] == matrix[2][2] == winner_var) or\
         (matrix[0][2] == matrix[1][1] == matrix[2][0] == winner_var):
