@@ -33,7 +33,7 @@ def is_valid_game(matrix):
 
 def check_rows_columns(matrix, check_var):
     for row in matrix:
-        if len(set(row) == 1 and row[0] ==check_var):
+        if len(set(row) == 1 and row[0] == check_var):
             return False
     return True
 
@@ -48,8 +48,8 @@ def decide_winner(matrix, winner_var):
     transpose_matrix = new_transpose_matrix(matrix, 0, [])
     if is_valid_game(matrix, winner_var) or\
         is_valid_game(transpose_matrix, winner_var) or\
-        matrix[0][0] == matrix[1][1] == matrix[2][2] == check_var or\
-        matrix[0][2] == matrix[1][1] == matrix[2][0] == check_var
+        matrix[0][0] == matrix[1][1] == matrix[2][2] == winner_var or\
+        matrix[0][2] == matrix[1][1] == matrix[2][0] == winner_var:
         return True
     return False
 
@@ -61,7 +61,7 @@ def main():
     matrix = read_input()
     if is_valid_input(matrix):
         if is_valid_game(matrix):
-            if is_winner(matrix, 'x'):
+            if decide_winner(matrix, 'x'):
                 print('x')
             elif decide_winner(matrix, 'o'):
                 print('o')
@@ -69,14 +69,4 @@ def main():
                 print('draw')
     else:
         print("invalid input")
-
-    
-
-
-
-
-
-
-    
-
 
