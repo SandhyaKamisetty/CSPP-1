@@ -39,7 +39,7 @@ def check_rows_columns(matrix, check_var):
     checking rows and columns
     '''
     for row in matrix:
-        if len(set(row) == 1 and row[0] == check_var):
+        if len(set(row)) == 1 and row[0] == check_var:
             return False
     return True
 
@@ -51,7 +51,7 @@ def new_transpose_matrix(matrix, increment, temp_matrix):
         return temp_matrix
     else:
         temp_matrix.append([matrix[0][increment], matrix[1][increment], matrix[2][increment]])
-    return new_transpose_matrix(matrix, increment+1, temp_matrix)
+        return new_transpose_matrix(matrix, increment+1, temp_matrix)
 
 def decide_winner(matrix, winner_var):
     '''
