@@ -10,7 +10,7 @@ def mult_matrix(matrix_1, matrix_2):
         error message should be "Error: Matrix shapes invalid for mult"
     '''
     rows = len(matrix_1)
-    columns = len(matrix_1[0])
+    columns = len(matrix_2[0])
     addition_mat = generate_matrix(rows, columns)
     if len(matrix_1[0]) == len(matrix_2):
         for i in range(rows):
