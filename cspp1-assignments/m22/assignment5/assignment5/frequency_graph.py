@@ -7,12 +7,15 @@ def frequency_graph(dictionary):
     '''
     determine frequency
     '''
-    dict_1 = sorted(dictionary.keys()) 
+    dict_1 = sorted(dictionary.keys())
     for i in dict_1:
-    	print(i, "-", "##")
+        print(i, "-", "##")
 
 
 def main():
+    '''
+    main function
+    '''
     dictionary = eval(input())
     frequency_graph(dictionary)
 
