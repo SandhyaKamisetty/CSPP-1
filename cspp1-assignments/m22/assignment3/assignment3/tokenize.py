@@ -13,13 +13,13 @@ def tokenize(string_input):
             dictionary[word] += 1
         elif word not in dictionary:
             dictionary[word] = 1
-    return dictionary
-def clean_string(string_input):
-    '''
-    cleaning string
-    '''
-    words = re.sub('[^a-z]', " ",replace('\'', '')).split(" ")
-    return word
+    return dictionary   
+# def clean_string(string_input):
+#     '''
+#     cleaning string
+#     '''
+#     words = re.sub('[^a-z]', " ",replace('\'', '')).split(" ")
+#     return word
 
 def main():
     '''
