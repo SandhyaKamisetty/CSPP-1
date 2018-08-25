@@ -39,7 +39,7 @@ def check_rows_columns(matrix, check_var):
     checking rows and columns
     '''
     for row in matrix:
-        if len(set(row)) == 1 and row[0] == check_var:
+        if len(set(row)) == 1 and row[0] == check_var:#x
             return True
     return False
 
