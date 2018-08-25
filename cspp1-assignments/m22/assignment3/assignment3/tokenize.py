@@ -9,12 +9,17 @@ def tokenize(string_input):
     '''
     dictionary = {}
     for word in string_input:
-        if word not in dictionary:
-            dictionary[word] = [string_input.count(word)]
-        else:
-            if (string_input.count(word)) not in dictionary[word]:
-                dictionary[word].append(string_input(word))
+        if word in dictionary:
+            dictionary[word] += 1
+        elif word not in dictionary:
+            dictionary[word] = 1
     return dictionary
+def clean_string(string_input):
+    '''
+    cleaning string
+    '''
+    words = re.sub('[^a-z]', " ",replace('\'', '')).split(" ")
+    return word
 
 def main():
     '''
