@@ -2,7 +2,7 @@
 Write a function to tokenize a given string and return a dictionary with the frequency of
 each word
 '''
-
+import re
 def tokenize(string_input):
     '''
     string frequency
@@ -15,7 +15,7 @@ def tokenize(string_input):
             if (string_input.count(word)) not in dictionary[word]:
                 dictionary[word].append(string_input(word))
     return dictionary
-            
+
 def main():
     '''
     main function
